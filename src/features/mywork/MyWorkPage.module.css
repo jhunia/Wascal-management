@@ -1,0 +1,86 @@
+/* Summary row inside the blue banner: small, quiet numbers */
+.summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.sum {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--c-on-dark);
+  font-size: var(--t-sm);
+  font-weight: 600;
+}
+.sum b {
+  font-size: 1.05rem;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.sum_risk {
+  background: #c0392b;
+  color: #fff;
+}
+.sum_ochre {
+  background: var(--c-ochre);
+  color: #1a1f2b;
+}
+.sum_ochre b {
+  color: #1a1f2b;
+}
+
+.projects {
+  display: grid;
+  gap: var(--s-3);
+}
+.more {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--s-2);
+}
+
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-4);
+}
+.feed li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: var(--s-3);
+}
+.feed p {
+  font-size: var(--t-sm);
+  color: var(--c-ink-2);
+  margin-top: 2px;
+}
+.feedHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px var(--s-2);
+  font-size: var(--t-sm);
+}
+.feedHead a {
+  font-weight: 700;
+  font-size: 13px;
+}
+.feedHead span {
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .sum {
+    padding: 5px 11px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,121 @@
+.profile {
+  display: flex;
+  gap: var(--s-4);
+  align-items: center;
+}
+.profile p {
+  font-size: var(--t-sm);
+}
+.note,
+.hint {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.note {
+  margin-top: var(--s-4);
+}
+.h3 {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  margin: var(--s-5) 0 var(--s-2);
+}
+.h3:first-child {
+  margin-top: 0;
+}
+
+/* ---- switch toggle ------------------------------------------------------ */
+.toggles {
+  display: grid;
+}
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-line);
+  cursor: pointer;
+}
+.toggle:last-child {
+  border-bottom: 0;
+}
+.toggle > span {
+  display: grid;
+}
+.toggle b {
+  font-size: var(--t-sm);
+}
+.toggle small {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.toggle i {
+  flex: none;
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: var(--r-pill);
+  background: var(--c-line-strong);
+  transition: background 0.18s;
+}
+.toggle i::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s var(--ease);
+}
+.toggle input:checked + i {
+  background: var(--c-brand);
+}
+.toggle input:checked + i::after {
+  transform: translateX(18px);
+}
+.toggle input:focus-visible + i {
+  outline: 2px solid var(--c-brand);
+  outline-offset: 2px;
+}
+
+/* ---- lead-time chips ---------------------------------------------------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--s-2);
+}
+.chip,
+.chipOn {
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-line-strong);
+  background: var(--c-card);
+  font-size: var(--t-xs);
+  font-weight: 700;
+}
+.chipOn {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  color: #fff;
+}
+
+.proto {
+  border-style: dashed;
+}
+.reset {
+  margin-top: var(--s-4);
+}

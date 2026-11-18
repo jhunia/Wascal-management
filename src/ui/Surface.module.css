@@ -1,0 +1,249 @@
+/* ---- PageHeader: deep-blue banner (mirrors the website's page banners) ---
+   The banner stretches edge to edge of the main column using a ::before
+   background; .main in AppShell clips the overflow. Inside the banner the
+   colour tokens are redefined for white-on-blue, so Tags, HealthBadges and
+   secondary Buttons placed in it adapt automatically. */
+.banner {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  gap: var(--s-5);
+  margin: calc(var(--page-top, 32px) * -1) 0 var(--s-6);
+  padding: var(--s-8) 0 var(--s-8);
+  color: #fff;
+
+  --c-ink: #ffffff;
+  --c-ink-2: var(--c-on-dark);
+  --c-ink-3: var(--c-on-dark-2);
+  --c-line: rgba(255, 255, 255, 0.14);
+  --c-line-strong: rgba(255, 255, 255, 0.3);
+  --c-card: rgba(255, 255, 255, 0.08);
+  --c-paper: rgba(255, 255, 255, 0.07);
+  --c-paper-2: rgba(255, 255, 255, 0.14);
+  --c-brand-soft: rgba(255, 255, 255, 0.12);
+  --c-brand-deep: #ffffff; /* text that is "deep blue" on white becomes white here */
+  --c-card: rgba(255, 255, 255, 0.08);
+  --c-ok: #8fe0b4;
+  --c-ok-soft: rgba(92, 194, 139, 0.2);
+  --c-warn: #ffc76e;
+  --c-warn-soft: rgba(224, 163, 58, 0.22);
+  --c-risk: #ffab9e;
+  --c-risk-soft: rgba(240, 128, 111, 0.22);
+  --c-idle: #c3d1e6;
+  --c-idle-soft: rgba(255, 255, 255, 0.12);
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0 -100vmax;
+  background-color: var(--c-banner);
+  background-image: linear-gradient(120deg, rgba(27, 83, 155, 0.6), rgba(11, 35, 67, 0) 60%);
+}
+.bannerMain {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-4) var(--s-6);
+  flex-wrap: wrap;
+}
+.bannerText {
+  min-width: 0;
+  max-width: 860px;
+}
+.bannerEyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-ochre);
+  margin-bottom: 8px;
+}
+.pageTitle {
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+}
+.lede {
+  margin-top: 10px;
+  color: var(--c-on-dark);
+  font-size: 1rem;
+  max-width: 68ch;
+}
+.actions {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+}
+.bannerExtra {
+  min-width: 0;
+}
+.banner [role='tablist'] {
+  background: rgba(255, 255, 255, 0.1);
+}
+.banner [role='tab'][aria-selected='true'] {
+  background: #fff;
+  color: var(--c-banner);
+}
+@media (max-width: 720px) {
+  .banner {
+    padding: var(--s-6) 0;
+    gap: var(--s-4);
+  }
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+  .lede {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ---- Card --------------------------------------------------------------- */
+.card {
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-1);
+  min-width: 0;
+  overflow: hidden;
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-5);
+  border-bottom: 1px solid var(--c-line);
+  min-height: 56px;
+}
+.cardTitleWrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  min-width: 0;
+}
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.cardMeta {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--c-ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.cardBody {
+  padding: var(--s-5);
+}
+
+/* ---- Stat --------------------------------------------------------------- */
+.stat {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  text-align: left;
+  padding: var(--s-4) var(--s-5);
+  background: var(--c-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-1);
+  min-width: 0;
+  color: var(--c-ink);
+}
+.statBtn {
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.statBtn:hover {
+  border-color: var(--c-line-strong);
+  box-shadow: var(--shadow-2);
+}
+.statActive {
+  border-color: var(--tone);
+  box-shadow: 0 0 0 1px var(--tone);
+}
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--c-ink-2);
+}
+.statDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tone);
+  flex: none;
+}
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.statHint {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.tone_neutral { --tone: var(--c-brand); }
+.tone_ok { --tone: var(--c-ok); }
+.tone_warn { --tone: var(--c-warn); }
+.tone_risk { --tone: var(--c-risk); }
+.tone_ochre { --tone: var(--c-ochre); }
+
+/* ---- EmptyState --------------------------------------------------------- */
+.empty {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: var(--s-2);
+  padding: var(--s-10) var(--s-4);
+  color: var(--c-ink-2);
+}
+.emptyIcon {
+  color: var(--c-brand);
+  opacity: 0.6;
+}
+.emptyTitle {
+  font-weight: 700;
+  color: var(--c-ink);
+}
+.emptyBody {
+  font-size: var(--t-sm);
+  max-width: 40ch;
+}
+
+/* ---- Skeleton ----------------------------------------------------------- */
+.skeleton {
+  display: block;
+  background: linear-gradient(90deg, var(--c-paper-2) 0%, var(--c-line) 50%, var(--c-paper-2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+.skelRows {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-5);
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ---- Tag ---------------------------------------------------------------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  background: var(--c-paper-2);
+  white-space: nowrap;
+}

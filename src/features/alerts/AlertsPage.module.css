@@ -1,0 +1,104 @@
+.bar {
+  margin-bottom: var(--s-4);
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto 28px;
+  gap: var(--s-3);
+  align-items: center;
+  padding: 14px var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+  border-left: 3px solid var(--tone);
+}
+.item:last-child {
+  border-bottom: 0;
+}
+.read {
+  border-left-color: transparent;
+  opacity: 0.6;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--soft);
+  color: var(--tone);
+}
+.body {
+  min-width: 0;
+}
+.kind {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+.title {
+  display: block;
+  font-weight: 700;
+  color: var(--c-ink);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.detail {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.when {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.dismiss {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+}
+.dismiss span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-brand);
+}
+.dismiss:hover {
+  background: var(--c-paper-2);
+}
+
+.escalation { --tone: var(--c-risk); --soft: var(--c-risk-soft); }
+.overdue { --tone: var(--c-risk); --soft: var(--c-risk-soft); }
+.health_changed { --tone: var(--c-risk); --soft: var(--c-risk-soft); }
+.report_due { --tone: var(--c-warn); --soft: var(--c-warn-soft); }
+.due_soon { --tone: var(--c-ochre); --soft: var(--c-ochre-soft); }
+.stale { --tone: var(--c-idle); --soft: var(--c-idle-soft); }
+.assigned { --tone: var(--c-brand); --soft: var(--c-brand-soft); }
+
+.rules {
+  margin-top: var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+  max-width: 80ch;
+}
+
+@media (max-width: 720px) {
+  .item {
+    grid-template-columns: 36px minmax(0, 1fr) 28px;
+  }
+  .when {
+    display: none;
+  }
+  .title {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,154 @@
+.stripCard {
+  margin-bottom: var(--s-5);
+}
+
+/* ---- Health board table ------------------------------------------------- */
+.tableWrap {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+.table th {
+  text-align: left;
+  padding: 10px var(--s-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  background: var(--c-paper);
+  border-bottom: 1px solid var(--c-line);
+  white-space: nowrap;
+}
+.table td {
+  padding: 14px var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+  vertical-align: middle;
+}
+.table tbody tr:hover {
+  background: var(--c-paper);
+}
+.table tr:last-child td {
+  border-bottom: 0;
+}
+.table th:first-child,
+.table td:first-child {
+  padding-left: var(--s-5);
+}
+.pcell {
+  display: grid;
+  color: var(--c-ink);
+  min-width: 150px;
+}
+.pcell .mono,
+.pcell span {
+  font-weight: 700;
+  color: var(--c-brand);
+}
+.pcell small {
+  font-size: 12.5px;
+  color: var(--c-ink-3);
+  white-space: nowrap;
+}
+.bar {
+  min-width: 130px;
+}
+.num {
+  text-align: right;
+}
+.lateNum {
+  font-weight: 800;
+  color: var(--c-risk);
+}
+.money {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--c-ink-2);
+  min-width: 50px;
+  text-align: right;
+}
+.note {
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+  border-top: 1px solid var(--c-line);
+}
+
+/* ---- By programme ------------------------------------------------------- */
+.breakdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-3);
+}
+.bdHead {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.stack {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+.stack i {
+  display: block;
+}
+.on_track { background: var(--c-ok); }
+.at_risk { background: var(--c-warn); }
+.off_track { background: var(--c-risk); }
+.not_started { background: var(--c-idle); }
+
+/* ---- By country --------------------------------------------------------- */
+.countries {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.countries button {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 8px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-sm);
+  background: var(--c-card);
+  color: var(--c-ink);
+  font-size: 13px;
+  text-align: left;
+  min-width: 0;
+}
+.countries button:hover {
+  border-color: var(--c-line-strong);
+}
+.countries b {
+  font-size: 11px;
+  color: var(--c-brand);
+}
+.countries span {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--c-ink-2);
+}
+.countries em {
+  font-style: normal;
+  font-weight: 700;
+}
+.countries .cOn {
+  border-color: var(--c-brand);
+  background: var(--c-brand);
+}
+.countries .cOn * {
+  color: #fff;
+}

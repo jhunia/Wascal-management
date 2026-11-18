@@ -1,0 +1,144 @@
+.scroller {
+  overflow-x: auto;
+}
+.gantt {
+  --label-w: 250px;
+  position: relative;
+  min-width: 760px;
+  padding: var(--s-2) var(--s-4) var(--s-4);
+}
+.row {
+  display: grid;
+  grid-template-columns: var(--label-w) minmax(0, 1fr);
+  gap: var(--s-3);
+  align-items: center;
+}
+.row + .row {
+  border-top: 1px dashed var(--c-line);
+}
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-width: 0;
+  padding: 10px 0;
+  font-size: var(--t-sm);
+}
+.code {
+  font-weight: 700;
+  color: var(--c-brand);
+  font-size: var(--t-xs);
+  min-width: 30px;
+}
+.wpTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+.axis {
+  position: relative;
+  height: 30px;
+}
+.month {
+  position: absolute;
+  bottom: 4px;
+  height: 100%;
+  border-left: 1px solid var(--c-line);
+  padding-left: 4px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 10px;
+  color: var(--c-ink-3);
+  white-space: nowrap;
+}
+.year {
+  border-left-color: var(--c-ink-3);
+  color: var(--c-ink);
+  font-weight: 700;
+}
+.lane {
+  position: relative;
+  height: 44px;
+}
+.grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--c-line);
+  opacity: 0.7;
+}
+.bar {
+  position: absolute;
+  top: 50%;
+  height: 14px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: repeating-linear-gradient(-45deg, var(--c-brand-soft) 0 6px, color-mix(in srgb, var(--c-brand-soft) 60%, var(--c-card)) 6px 12px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c-brand) 40%, transparent);
+}
+
+/* markers: same visual language as the portfolio strip */
+.mark {
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%);
+  background: var(--fill);
+  border: 2px solid var(--c-card);
+  box-shadow: 0 0 0 1px var(--edge);
+  z-index: 1;
+}
+.deliverable { border-radius: 50%; }
+.milestone { transform: translate(-50%, -50%) rotate(45deg); width: 12px; height: 12px; }
+.report { border-radius: 2px; width: 14px; height: 14px; }
+.u_overdue { --fill: var(--c-risk); --edge: var(--c-risk); }
+.u_urgent { --fill: var(--c-ochre); --edge: var(--c-warn); }
+.u_soon { --fill: var(--c-ochre-soft); --edge: var(--c-warn); }
+.u_later { --fill: var(--c-card); --edge: var(--c-brand); }
+.u_done { --fill: var(--c-ok); --edge: var(--c-ok); }
+
+/* today line overlay */
+.todayLayer {
+  position: absolute;
+  inset: var(--s-2) var(--s-4) var(--s-4);
+  display: grid;
+  grid-template-columns: var(--label-w) minmax(0, 1fr);
+  gap: var(--s-3);
+  pointer-events: none;
+}
+.todayTrack {
+  position: relative;
+}
+.today {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--c-ochre);
+  z-index: 2;
+}
+.today span {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--c-ochre);
+  color: #2a1a02;
+}
+
+@media (max-width: 720px) {
+  .gantt {
+    --label-w: 150px;
+  }
+}

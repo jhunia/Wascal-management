@@ -1,0 +1,83 @@
+/* ---- HealthBadge -------------------------------------------------------- */
+.health {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 8px;
+  border-radius: var(--r-pill);
+  background: var(--soft);
+  color: var(--tone);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.health i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+.healthDot {
+  display: inline-block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 0 3px var(--soft);
+}
+.on_track { --tone: var(--c-ok); --soft: var(--c-ok-soft); }
+.at_risk { --tone: var(--c-warn); --soft: var(--c-warn-soft); }
+.off_track { --tone: var(--c-risk); --soft: var(--c-risk-soft); }
+.not_started { --tone: var(--c-idle); --soft: var(--c-idle-soft); }
+
+/* ---- StatusPill --------------------------------------------------------- */
+.pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--bg);
+  color: var(--fg);
+}
+.st_not_started { --bg: var(--c-idle-soft); --fg: var(--c-ink-2); }
+.st_in_progress { --bg: var(--c-brand-soft); --fg: var(--c-brand); }
+.st_submitted { --bg: var(--c-ochre-soft); --fg: var(--c-ochre-ink); }
+.st_done { --bg: var(--c-ok-soft); --fg: var(--c-ok); }
+.st_blocked { --bg: var(--c-risk-soft); --fg: var(--c-risk); }
+
+/* ---- DueChip ------------------------------------------------------------ */
+.due {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  background: var(--bg);
+  color: var(--fg);
+}
+.due small {
+  font-size: 11.5px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.u_overdue { --bg: var(--c-risk); --fg: #fff; }
+.u_urgent { --bg: var(--c-ochre-soft); --fg: var(--c-ochre-ink); }
+:root[data-theme='dark'] .u_overdue { --fg: #1a0a08; }
+
+.dueQuiet {
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--c-ink-2);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.dueDone {
+  color: var(--c-ok);
+}

@@ -1,0 +1,217 @@
+/* Shared styles for the project-detail tabs. */
+.link {
+  font-size: var(--t-sm);
+  font-weight: 600;
+}
+.legend {
+  padding: var(--s-3) var(--s-4);
+  border-top: 1px solid var(--c-line);
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+
+/* ---- work packages list ------------------------------------------------- */
+.wps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.wps li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 160px 26px;
+  gap: var(--s-3);
+  align-items: center;
+  padding: 12px var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+}
+.wps li:last-child {
+  border-bottom: 0;
+}
+.wpCode {
+  font-weight: 800;
+  color: var(--c-brand);
+}
+.wpMain {
+  display: grid;
+  min-width: 0;
+}
+.wpMain b {
+  font-size: var(--t-sm);
+}
+.wpMain small {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+
+/* ---- feeds / diary ------------------------------------------------------ */
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-4);
+}
+.feed p,
+.diaryCard p {
+  font-size: var(--t-sm);
+  color: var(--c-ink-2);
+  margin-top: 6px;
+}
+.feedHead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  font-size: var(--t-sm);
+}
+.feedHead span {
+  font-size: var(--t-xs);
+}
+.blocker {
+  padding: 6px 10px;
+  border-left: 3px solid var(--c-risk);
+  background: var(--c-risk-soft);
+  border-radius: 0 4px 4px 0;
+  color: var(--c-ink) !important;
+}
+.next {
+  padding: 6px 10px;
+  border-left: 3px solid var(--c-brand);
+  background: var(--c-brand-soft);
+  border-radius: 0 4px 4px 0;
+  color: var(--c-ink) !important;
+}
+
+.diary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.diary::before {
+  content: '';
+  position: absolute;
+  left: 104px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--c-line);
+}
+.diary li {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--s-6);
+  padding-bottom: var(--s-5);
+  position: relative;
+}
+.diary li::before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-card);
+  border: 2px solid var(--c-ochre);
+}
+.diaryDate {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+  text-align: right;
+  padding-top: 2px;
+}
+.diaryCard {
+  min-width: 0;
+}
+.diaryTag {
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  background: var(--c-ok-soft);
+  color: var(--c-ok);
+  font-weight: 700;
+}
+
+/* ---- reports & team lists ----------------------------------------------- */
+.reports,
+.team {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.reports li,
+.team li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 12px var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+}
+.reports li:last-child,
+.team li:last-child {
+  border-bottom: 0;
+}
+.rMain {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+.rMain b {
+  font-size: var(--t-sm);
+}
+.rMain small {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.leadTag {
+  margin-left: 4px;
+  padding: 0 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--c-ochre-soft);
+  color: var(--c-warn);
+}
+.mail {
+  font-size: var(--t-xs);
+}
+.partners {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 4px;
+  font-size: var(--t-sm);
+}
+.countryList {
+  display: grid;
+  gap: 6px;
+  font-size: var(--t-sm);
+}
+
+@media (max-width: 720px) {
+  .wps li {
+    grid-template-columns: 34px minmax(0, 1fr) 26px;
+  }
+  .wpBar {
+    grid-column: 2 / 3;
+  }
+  .diary::before,
+  .diary li::before {
+    display: none;
+  }
+  .diary li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .diaryDate {
+    text-align: left;
+  }
+  .team li {
+    flex-wrap: wrap;
+  }
+  .mail {
+    display: none;
+  }
+}

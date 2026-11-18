@@ -1,0 +1,97 @@
+/* Buttons follow the WASCAL website: 8px corners, bold label,
+   blue = primary, ochre = the one main action on a screen. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  border: 1.5px solid transparent;
+  border-radius: var(--r-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background 0.15s var(--ease), border-color 0.15s, color 0.15s;
+}
+.link:hover {
+  text-decoration: none;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn svg {
+  flex: none;
+}
+
+.md {
+  height: 40px;
+  padding: 0 var(--s-4);
+  font-size: var(--t-sm);
+}
+.sm {
+  height: 32px;
+  padding: 0 var(--s-3);
+  font-size: 13px;
+}
+.iconOnly.md {
+  width: 40px;
+  padding: 0;
+}
+.iconOnly.sm {
+  width: 32px;
+  padding: 0;
+}
+.block {
+  width: 100%;
+}
+
+/* WASCAL blue */
+.primary {
+  background: var(--c-brand);
+  color: #fff;
+}
+.primary:hover:not(:disabled) {
+  background: var(--c-brand-deep);
+  color: #fff;
+}
+:root[data-theme='dark'] .primary {
+  background: #2a66b5;
+}
+:root[data-theme='dark'] .primary:hover:not(:disabled) {
+  background: #3576cc;
+}
+
+/* Ochre: the main call to action (e.g. "Post update") */
+.accent {
+  background: var(--c-ochre);
+  color: #1a1f2b;
+}
+.accent:hover:not(:disabled) {
+  background: var(--c-ochre-hover);
+  color: #1a1f2b;
+}
+
+/* Outlined */
+.secondary {
+  background: var(--c-card);
+  border-color: var(--c-line-strong);
+  color: var(--c-ink);
+}
+.secondary:hover:not(:disabled) {
+  border-color: var(--c-brand);
+  color: var(--c-brand);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--c-ink-2);
+}
+.ghost:hover:not(:disabled) {
+  background: var(--c-paper-2);
+  color: var(--c-ink);
+}
+
+.danger {
+  background: var(--c-risk);
+  color: #fff;
+}

@@ -1,0 +1,61 @@
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: var(--s-4);
+}
+.label {
+  font-size: var(--t-sm);
+  font-weight: 700;
+}
+.hint {
+  font-size: var(--t-xs);
+  color: var(--c-ink-3);
+}
+.error {
+  font-size: var(--t-xs);
+  font-weight: 600;
+  color: var(--c-risk);
+}
+
+.control {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--r-sm);
+  background: var(--c-card);
+  font-size: var(--t-md);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.control:hover {
+  border-color: var(--c-ink-3);
+}
+.control:focus {
+  outline: none;
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-soft);
+}
+.textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+.select {
+  appearance: none;
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236e7d89' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.filter {
+  display: inline-block;
+  min-width: 0;
+}
+.filterSelect {
+  min-height: 36px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  max-width: 220px;
+}

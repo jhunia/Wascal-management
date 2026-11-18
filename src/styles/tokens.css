@@ -1,0 +1,146 @@
+/* ==========================================================================
+   DESIGN TOKENS: the single source of truth for the look of the app.
+   Values are taken from the WASCAL website (wascal.org redesign) so the
+   tracker and the website look like one family:
+     brand blue #1b539b · deep blue #0f2e57 · ochre accent #e0a33a
+     cool-grey surfaces · Inter as the only typeface
+   Change a value here and every screen follows.
+   Naming:  --c-*  colours   --s-*  spacing   --r-*  corner radius
+            --f-*  font family   --t-*  text size   --z-*  stacking order
+   ========================================================================== */
+
+:root {
+  /* ---- Surfaces & text -------------------------------------------------- */
+  --c-paper: #f4f6f9;          /* page background (website "surface")        */
+  --c-paper-2: #eaeef4;        /* sunken areas, hover rows, table headers    */
+  --c-card: #ffffff;           /* cards, tables, sheets                      */
+  --c-ink: #1a1f2b;            /* main text                                  */
+  --c-ink-2: #3a4252;          /* secondary text                             */
+  --c-ink-3: #5b6475;          /* muted text, captions                       */
+  --c-line: #e3e7ee;           /* hairline borders                           */
+  --c-line-strong: #d5dbe5;    /* inputs, stronger borders                   */
+
+  /* ---- WASCAL brand ----------------------------------------------------- */
+  --c-brand: #1b539b;          /* WASCAL blue: links, primary buttons        */
+  --c-brand-deep: #0f2e57;     /* deep blue: page banners, hover             */
+  --c-brand-ink: #0b2343;      /* darkest blue: banner gradient              */
+  --c-brand-soft: #e8eff8;     /* blue tint: selected menu item, chips       */
+  --c-ochre: #e0a33a;          /* ochre accent: main call to action, today   */
+  --c-ochre-hover: #d0922a;
+  --c-ochre-ink: #6b440c;      /* text on ochre tints                        */
+  --c-ochre-soft: #fbf1e1;
+
+  /* ---- Health / status signals ----------------------------------------- */
+  --c-ok: #1e7a4c;
+  --c-ok-soft: #e3f3ea;
+  --c-warn: #a96300;
+  --c-warn-soft: #fdf0dc;
+  --c-risk: #b7372a;
+  --c-risk-soft: #fbe7e4;
+  --c-idle: #6b7486;
+  --c-idle-soft: #eceff4;
+
+  /* ---- Sidebar ---------------------------------------------------------- */
+  --c-rail: #ffffff;
+  --c-rail-text: var(--c-ink-2);
+  --c-rail-active-bg: var(--c-brand-soft);
+  --c-rail-active-text: var(--c-brand-deep);
+
+  /* Page banners: deep-blue background + light text (same as the website) */
+  --c-banner: #0f2e57;
+  --c-on-dark: #dce6f4;
+  --c-on-dark-2: #c3d1e6;
+
+  /* ---- Typography: Inter only, like the website ------------------------ */
+  --f-body: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-display: var(--f-body); /* headings */
+  --f-mono: var(--f-body);    /* codes/dates: Inter with tabular figures */
+
+  --t-xs: 0.75rem;   /* 12px */
+  --t-sm: 0.875rem;  /* 14px */
+  --t-md: 0.9375rem; /* 15px: base size */
+  --t-lg: 1.125rem;  /* 18px */
+  --t-xl: 1.5rem;    /* 24px */
+  --t-2xl: 2rem;     /* 32px */
+  --t-3xl: 2.75rem;  /* 44px */
+
+  /* ---- Spacing (4px scale) ---------------------------------------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  /* ---- Shape & depth (website: 12px cards, 8px buttons) ---------------- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(15, 46, 87, 0.06);
+  --shadow-2: 0 2px 14px rgba(15, 46, 87, 0.12);
+  --shadow-3: 0 18px 40px rgba(11, 35, 67, 0.22);
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --rail-width: 252px;      /* desktop sidebar width */
+  --tabbar-height: 64px;    /* phone bottom tab bar  */
+  --content-max: 1280px;
+  --gutter: 32px;           /* page side padding (16px on phones) */
+
+  /* ---- Stacking --------------------------------------------------------- */
+  --z-rail: 20;
+  --z-topbar: 30;
+  --z-sheet: 50;
+  --z-toast: 60;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  color-scheme: light;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 16px;
+  }
+}
+
+/* ---- Dark theme ---------------------------------------------------------
+   Used when Settings → Appearance is "Dark", or "System" and the device is dark.
+   Built from WASCAL's deep blues so it still feels on-brand. */
+:root[data-theme='dark'] {
+  --c-paper: #0a1628;
+  --c-paper-2: #10203a;
+  --c-card: #12233d;
+  --c-ink: #eef3fa;
+  --c-ink-2: #c3d1e6;
+  --c-ink-3: #93a5c0;
+  --c-line: #1f3456;
+  --c-line-strong: #2b4470;
+  --c-brand: #6ea3e6;
+  --c-brand-deep: #0b2343;
+  --c-brand-ink: #071a33;
+  --c-brand-soft: #18335a;
+  --c-ochre: #e7ad48;
+  --c-ochre-hover: #f0bb5c;
+  --c-ochre-ink: #f6d39a;
+  --c-ochre-soft: #3a2c13;
+  --c-ok: #5cc28b;
+  --c-ok-soft: #12352a;
+  --c-warn: #f0b04f;
+  --c-warn-soft: #3a2a10;
+  --c-risk: #f0806f;
+  --c-risk-soft: #3f1d1c;
+  --c-idle: #93a5c0;
+  --c-idle-soft: #1a2c48;
+  --c-banner: #0b2343;
+  --c-rail: #0d1c33;
+  --c-rail-text: var(--c-ink-2);
+  --c-rail-active-bg: #18335a;
+  --c-rail-active-text: #ffffff;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 4px 18px rgba(0, 0, 0, 0.4);
+  --shadow-3: 0 18px 40px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}

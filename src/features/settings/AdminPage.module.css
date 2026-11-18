@@ -1,0 +1,80 @@
+.search {
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+}
+.tableWrap {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+}
+.table th {
+  text-align: left;
+  padding: 10px var(--s-4);
+  font-size: var(--t-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-ink-3);
+  background: var(--c-paper);
+  border-bottom: 1px solid var(--c-line);
+}
+.table td {
+  padding: 10px var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+  white-space: nowrap;
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.person span {
+  display: grid;
+}
+.person small {
+  font-size: 11px;
+  color: var(--c-ink-3);
+}
+.role_admin,
+.role_executive,
+.role_programme_head,
+.role_lead,
+.role_member,
+.role_finance {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+}
+.role_admin { background: var(--c-ink); color: var(--c-paper); }
+.role_executive { background: var(--c-risk-soft); color: var(--c-risk); }
+.role_programme_head { background: var(--c-ochre-soft); color: var(--c-warn); }
+.role_lead { background: var(--c-brand-soft); color: var(--c-brand); }
+.role_member { background: var(--c-idle-soft); color: var(--c-ink-2); }
+.role_finance { background: var(--c-ok-soft); color: var(--c-ok); }
+
+.rules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: var(--t-sm);
+}
+.rules li {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--s-3);
+}
+.rules .mono,
+.rules span:first-child {
+  font-weight: 700;
+  color: var(--c-brand);
+  font-size: var(--t-xs);
+}
+.sso {
+  font-size: var(--t-sm);
+  color: var(--c-ink-2);
+}
